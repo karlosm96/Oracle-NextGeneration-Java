@@ -5,8 +5,32 @@ import com.aluracursos.screenmatch.calculos.Clasificacion;
 public class Episodio implements Clasificacion {
     private int numero;
     private String nombre;
+    private int temporada;
     private Serie serie;
     private int totalVisualizaciones;
+
+    public Episodio(int numero, String nombre, int temporada, Serie serie){
+        this.setNumero(numero);
+        this.setNombre(nombre);
+        this.setSerie(serie);
+        this.setTemporada(temporada);
+    }
+
+    public int getTemporada() {
+        return temporada;
+    }
+
+    public void setTemporada(int temporada) {
+        this.temporada = temporada;
+    }
+
+    public int getTotalVisualizaciones() {
+        return totalVisualizaciones;
+    }
+
+    public void setTotalVisualizaciones(int totalVisualizaciones) {
+        this.totalVisualizaciones = totalVisualizaciones;
+    }
 
     public int getNumero() {
         return numero;
