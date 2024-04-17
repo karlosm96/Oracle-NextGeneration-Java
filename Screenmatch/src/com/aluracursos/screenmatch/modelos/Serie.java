@@ -8,11 +8,9 @@ public class Serie extends Titulo{
 
     public Serie(String nombre, String fechaDeLanzamiento,
                  double duracionEnMinutos, boolean incluidoEnElPlan,
-                 double sumaDeLasEvaluaciones, double totalDeLasEvaluaciones,
                  int temporadas, int episodiosPorTemporada, int minutosPorEpisodio){
 
-        super(nombre, fechaDeLanzamiento, duracionEnMinutos, incluidoEnElPlan,
-                sumaDeLasEvaluaciones, totalDeLasEvaluaciones);
+        super(nombre, fechaDeLanzamiento, duracionEnMinutos, incluidoEnElPlan);
 
         this.setTemporadas(temporadas);
         this.setEpisodiosPorTemporada(episodiosPorTemporada);

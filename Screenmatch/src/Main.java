@@ -7,12 +7,15 @@ public class Main {
     public static void main(String[] args) {
         Pelicula matrix = new Pelicula("Matrix", "05-21-1999",
                                         136, true,
-                                        5000, 1095,
-                                        "Lana Wachowski, Lilly Wachowski");
+                                         "Lana Wachowski, Lilly Wachowski");
+
+        matrix.evalua(10);
+        matrix.evalua(6);
 
         Pelicula matrix2 = new Pelicula("Matrix", "05-21-1999",
                 136, true,
-                5000, 1095,
-                "Lana Wachowski, Lilly Wachowski");
+                 "Lana Wachowski, Lilly Wachowski");
+
+        System.out.println(matrix.getClasificacion());
     }
 }

@@ -6,30 +6,27 @@ public class Titulo {
     private double duracionEnMinutos;
     private boolean incluidoEnElPlan;
     private double sumaDeLasEvaluaciones;
-    private double totalDeLasEvaluaciones;
+    private int totalDeLasEvaluaciones;
 
     public Titulo(String nombre, String fechaDeLanzamiento,
-                  double duracionEnMinutos, boolean incluidoEnElPlan,
-                  double sumaDeLasEvaluaciones, double totalDeLasEvaluaciones){
+                  double duracionEnMinutos, boolean incluidoEnElPlan){
 
         this.setNombre(nombre);
         this.setFechaDeLanzamiento(fechaDeLanzamiento);
         this.setDuracionEnMinutos(duracionEnMinutos);
         this.setIncluidoEnElPlan(incluidoEnElPlan);
         this.setSumaDeLasEvaluaciones(sumaDeLasEvaluaciones);
-        this.setTotalDeLasEvaluaciones(totalDeLasEvaluaciones);
     }
 
-    public void muestraFichaTecnica(){
-
-    }
+    public void muestraFichaTecnica(){};
 
     public void evalua(double nota){
-
+        this.sumaDeLasEvaluaciones += nota;
+        this.setTotalDeLasEvaluaciones(1);
     }
 
     public double calculaMedia(){
-        return 1.2;
+        return this.sumaDeLasEvaluaciones / getTotalDeLasEvaluaciones();
     }
 
     private void setDuracionEnMinutos(double duracionEnMinutos) {
@@ -53,7 +50,7 @@ public class Titulo {
     }
 
     private void setTotalDeLasEvaluaciones(double totalDeLasEvaluaciones) {
-        this.totalDeLasEvaluaciones = totalDeLasEvaluaciones;
+        this.totalDeLasEvaluaciones += totalDeLasEvaluaciones;
     }
 
     public String getNombre() {
