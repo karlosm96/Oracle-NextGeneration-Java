@@ -6,11 +6,11 @@ public class Serie extends Titulo{
     private int minutosPorEpisodio;
 
 
-    public Serie(String nombre, String fechaDeLanzamiento,
+    public Serie(String nombre, int añoDeLanzamiento,
                  double duracionEnMinutos, boolean incluidoEnElPlan,
                  int temporadas, int episodiosPorTemporada, int minutosPorEpisodio){
 
-        super(nombre, fechaDeLanzamiento, duracionEnMinutos, incluidoEnElPlan);
+        super(nombre, añoDeLanzamiento, duracionEnMinutos, incluidoEnElPlan);
 
         this.setTemporadas(temporadas);
         this.setEpisodiosPorTemporada(episodiosPorTemporada);
@@ -35,6 +35,6 @@ public class Serie extends Titulo{
                 El nombre de la serie es: %s
                 Su fecha de lanzamiento es: %s
                 Duracion en minutos: %.2f
-                """, super.getNombre(), super.getFechaDeLanzamiento(), super.getDuracionEnMinutos()));
+                """, super.getNombre(), super.getAñoDeLanzamiento(), super.getDuracionEnMinutos()));
     }
 }

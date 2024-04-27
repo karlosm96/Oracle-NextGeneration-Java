@@ -7,7 +7,7 @@ import com.aluracursos.screenmatch.modelos.Serie;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         Pelicula matrix = new Pelicula("Matrix", "05-21-1999",
                                         136, true,
                                          "Lana Wachowski, Lilly Wachowski");
@@ -35,4 +35,5 @@ public class Main {
         filtroRecomendacion.filtrado(shogun_1x1);
 
     }
+     */
 }

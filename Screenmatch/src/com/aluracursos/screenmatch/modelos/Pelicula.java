@@ -5,11 +5,11 @@ import com.aluracursos.screenmatch.calculos.Clasificacion;
 public class Pelicula extends Titulo implements Clasificacion {
     private String director;
 
-    public Pelicula(String nombre, String fechaDeLanzamiento,
+    public Pelicula(String nombre, int añoDeLanzamiento,
                     double duracionEnMinutos, boolean incluidoEnElPlan,
                     String director){
 
-        super(nombre, fechaDeLanzamiento, duracionEnMinutos, incluidoEnElPlan);
+        super(nombre, añoDeLanzamiento, duracionEnMinutos, incluidoEnElPlan);
         this.setDirector(director);
     }
 
@@ -27,7 +27,7 @@ public class Pelicula extends Titulo implements Clasificacion {
                 El nombre de la pelicula es: %s
                 Su fecha de lanzamiento es: %s
                 Duracion en minutos: %.0f
-                """, super.getNombre(), super.getFechaDeLanzamiento(), super.getDuracionEnMinutos()));
+                """, super.getNombre(), super.getAñoDeLanzamiento(), super.getDuracionEnMinutos()));
     }
 
     @Override

@@ -1,21 +1,32 @@
 package com.aluracursos.screenmatch.modelos;
 
+import com.aluracursos.screenmatch.exceptions.ErrorConversionEnMinutosException;
+
 public class Titulo {
     private String nombre;
-    private String fechaDeLanzamiento;
+    private int añoDeLanzamiento;
     private double duracionEnMinutos;
     private boolean incluidoEnElPlan;
     private double sumaDeLasEvaluaciones;
     private int totalDeLasEvaluaciones;
 
-    public Titulo(String nombre, String fechaDeLanzamiento,
+    public Titulo(String nombre, int añoDeLanzamiento,
                   double duracionEnMinutos, boolean incluidoEnElPlan){
 
         this.setNombre(nombre);
-        this.setFechaDeLanzamiento(fechaDeLanzamiento);
+        this.setAñoDeLanzamiento(añoDeLanzamiento);
         this.setDuracionEnMinutos(duracionEnMinutos);
         this.setIncluidoEnElPlan(incluidoEnElPlan);
         this.setSumaDeLasEvaluaciones(sumaDeLasEvaluaciones);
+    }
+
+    public Titulo(TituloOmdb nuevoTituloOmdb) {
+        this.setNombre(nuevoTituloOmdb.title());
+        this.setAñoDeLanzamiento(Integer.valueOf(nuevoTituloOmdb.year()));
+        if(nuevoTituloOmdb.runtime().contains("N/A")){
+            throw new ErrorConversionEnMinutosException("Error: Error en la conversion de duracion, el campo contiene un 'N/A'");
+        }
+        this.setDuracionEnMinutos(Integer.valueOf(nuevoTituloOmdb.runtime().substring(0,3).replace(" ", "")));
     }
 
     public void muestraFichaTecnica(){};
@@ -33,8 +44,8 @@ public class Titulo {
         this.duracionEnMinutos = duracionEnMinutos;
     }
 
-    private void setFechaDeLanzamiento(String fechaDeLanzamiento) {
-        this.fechaDeLanzamiento = fechaDeLanzamiento;
+    private void setAñoDeLanzamiento(int fechaDeLanzamiento) {
+        this.añoDeLanzamiento = fechaDeLanzamiento;
     }
 
     private void setIncluidoEnElPlan(boolean incluidoEnElPlan) {
@@ -61,8 +72,8 @@ public class Titulo {
         return duracionEnMinutos;
     }
 
-    public String getFechaDeLanzamiento() {
-        return fechaDeLanzamiento;
+    public int getAñoDeLanzamiento() {
+        return añoDeLanzamiento;
     }
 
     public double getSumaDeLasEvaluaciones() {
@@ -75,5 +86,13 @@ public class Titulo {
 
     public boolean isIncluidoEnElPlan() {
         return incluidoEnElPlan;
+    }
+
+    @Override
+    public String toString() {
+        return "{nombre='" + nombre +
+                ", añoDeLanzamiento=" + añoDeLanzamiento +
+                ", duracionEnMinutos=" + duracionEnMinutos +
+                '}';
     }
 }
